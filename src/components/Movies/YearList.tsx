@@ -5,7 +5,15 @@ type Props = {
 };
 
 const YearList: FC<Props> = ({ years }) => {
-  return <div></div>;
+  return (
+    <div>
+      <ul>
+        {years.map((year, index) => {
+          return <li key={index}>{year}</li>;
+        })}
+      </ul>
+    </div>
+  );
 };
 
 export default YearList;
