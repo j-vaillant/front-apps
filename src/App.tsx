@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import CatList from "./components/CatList";
+import Roulette from "./components/Roulette";
+import Main from "./pages/Main";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Note from "./components/Note";
+import Counter from "./components/Counter";
+import DOM from "./components/DOM";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main />,
+    children: [
+      {
+        path: "cat",
+        element: <CatList />,
+      },
+      {
+        path: "roulette",
+        element: <Roulette />,
+      },
+      {
+        path: "note",
+        element: <Note />,
+      },
+      {
+        path: "counter",
+        element: <Counter />,
+      },
+      {
+        path: "dom",
+        element: <DOM />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
