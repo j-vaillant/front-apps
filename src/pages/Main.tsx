@@ -17,7 +17,7 @@ const Main = () => {
           <Link to="/counter">Counter</Link>
         </li>
         <li>
-          <Link to="/dom">DOM</Link>
+          <Link to="/context">Context</Link>
         </li>
       </nav>
       <Outlet />

@@ -1,7 +1,7 @@
 import Profile from "./Profile";
 import { UserProvider } from "./Context";
 
-const User = () => {
+const ContextDemo = () => {
   return (
     <>
       <UserProvider value={{ name: "User1" }}>
@@ -11,4 +11,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default ContextDemo;

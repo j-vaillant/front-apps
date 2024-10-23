@@ -5,7 +5,7 @@ import Main from "./pages/Main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Note from "./components/Note";
 import Counter from "./components/Counter";
-import DOM from "./components/DOM";
+import Context from "./components/ContextDemo";
 
 const router = createBrowserRouter([
   {
@@ -29,8 +29,8 @@ const router = createBrowserRouter([
         element: <Counter />,
       },
       {
-        path: "dom",
-        element: <DOM />,
+        path: "context",
+        element: <Context />,
       },
     ],
   },
