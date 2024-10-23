@@ -1,11 +1,11 @@
 import { formatData } from "../../utils/data";
-import YearList from "./YearList";
+import MoviesList from "./MoviesList";
 
 const Movies = () => {
   const movies = formatData();
   const years = Object.keys(movies);
 
-  return <YearList years={years} />;
+  return <div></div>;
 };
 
 export default Movies;
