@@ -17,5 +17,6 @@ export const reducer = (state: State, action: Action) => {
   if (action.type === DECREMENT) {
     return { count: state.count - 1 };
   }
+  
   throw Error("unexpected action");
 };
