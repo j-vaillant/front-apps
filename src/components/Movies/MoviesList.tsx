@@ -41,12 +41,13 @@ const MoviesList: FC<Props> = ({
         <span>{open ? "-" : "+"}</span>
       </li>
       <li
-        className={clsx("transition-all duration-1000 h-0", {
+        className={clsx("transition-all duration-500 max-h-0 h-0", {
           "h-auto": open,
+          "max-h-20": open,
           "overflow-hidden": !open,
         })}
       >
-        <ul className="ml-2">
+        <ul className="ml-2 p-2">
           {movies.map((m, i) => {
             return <li key={i}>{m}</li>;
           })}
