@@ -1,19 +1,23 @@
-import { MouseEventHandler, useState } from "react";
+import { MouseEventHandler, useReducer } from "react";
+import { DECREMENT, INCREMENT } from "../store/actions";
+import { reducer, State } from "../store/reducer/counter";
+
+const INITIAL_STATE: State = { count: 0 };
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
+  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
 
   const add: MouseEventHandler = () => {
-    setCount((prev) => prev + 1);
+    dispatch({ type: INCREMENT });
   };
 
   const substract: MouseEventHandler = () => {
-    setCount((prev) => prev - 1);
+    dispatch({ type: DECREMENT });
   };
 
   return (
     <div className="flex flex-col">
-      <span className="text-[48px]">{count}</span>
+      <span className="text-[48px]">{state.count}</span>
       <div>
         <button className="text-xl" onClick={add}>
           Add

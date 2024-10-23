@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Note from "./components/Note";
 import Counter from "./components/Counter";
 import Context from "./components/ContextDemo";
+import Movies from "./components/Movies";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "context",
         element: <Context />,
+      },
+      {
+        path: "Movies",
+        element: <Movies />,
       },
     ],
   },

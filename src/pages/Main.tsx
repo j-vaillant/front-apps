@@ -19,6 +19,9 @@ const Main = () => {
         <li>
           <Link to="/context">Context</Link>
         </li>
+        <li>
+          <Link to="/movies">Movies</Link>
+        </li>
       </nav>
       <Outlet />
     </div>
