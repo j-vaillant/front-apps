@@ -16,7 +16,7 @@ const Counter = () => {
       <span className="text-[48px]">{count}</span>
       <div>
         <button className="text-xl" onClick={add}>
-          +
+          Add
         </button>
         <button className="text-xl ml-2" onClick={substract}>
           -

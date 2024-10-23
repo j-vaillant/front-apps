@@ -12,6 +12,7 @@ describe.skip("Cat List component", () => {
   it("should display title", async () => {
     render(<CatList />);
 
+
     expect(screen.getByText("Some Random Cats")).toMatchSnapshot();
   });
 
