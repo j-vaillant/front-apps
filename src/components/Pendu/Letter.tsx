@@ -9,6 +9,7 @@ type Props = {
 
 const Letter: FC<Props> = ({ value, first, last, show = false }) => {
   const shouldShow = show || first || last;
+
   return <span className="text-[48px]">{shouldShow ? value : "-"}</span>;
 };
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 
 const colors = ["R", "B", "Y", "G"];
+
 const getColor = () => colors[Math.floor(Math.random() * colors.length)];
 
 const MemoryColors = () => {
@@ -20,6 +21,7 @@ const MemoryColors = () => {
     if (userValue === "" || status !== "user") {
       return;
     }
+
     if (
       userValue === computerValue &&
       userValue.length === computerValue.length
@@ -68,6 +70,7 @@ const MemoryColors = () => {
     if (round === 0) {
       return;
     }
+
     setComputerValue((prev) => prev + getColor());
     setStatus("computer");
     setUserValue("");
@@ -78,6 +81,7 @@ const MemoryColors = () => {
       return;
     }
     let count = 0;
+
     const interVal = window.setInterval(() => {
       if (count === computerValue.length) {
         window.clearInterval(interVal);
