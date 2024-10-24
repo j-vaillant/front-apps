@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { get } from "../utils/api";
+import { get } from "../../utils/api";
 
 type Cat = {
   id: string;

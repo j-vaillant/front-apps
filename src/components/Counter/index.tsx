@@ -1,6 +1,6 @@
 import { MouseEventHandler, useReducer } from "react";
-import { DECREMENT, INCREMENT } from "../store/actions";
-import { reducer, State } from "../store/reducer/counter";
+import { DECREMENT, INCREMENT } from "../../store/actions";
+import { reducer, State } from "../../store/reducer/counter";
 
 const INITIAL_STATE: State = { count: 0 };
 

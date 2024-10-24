@@ -1,6 +1,6 @@
 import { render, waitFor, screen } from "@testing-library/react";
 import mockData from "./cats";
-import CatList from "./CatList";
+import CatList from "./";
 
 jest.mock("../utils/api", () => {
   return {
@@ -11,7 +11,6 @@ jest.mock("../utils/api", () => {
 describe.skip("Cat List component", () => {
   it("should display title", async () => {
     render(<CatList />);
-
 
     expect(screen.getByText("Some Random Cats")).toMatchSnapshot();
   });
