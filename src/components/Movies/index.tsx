@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { formatData } from "../../utils/data";
 import MoviesList from "./MoviesList";
 
 const Movies = () => {
-  const movies = formatData();
+  const movies = useMemo(() => formatData(), []);
   const years = Object.keys(movies);
   const [categoryIndex, setCategoryIndex] = useState<number | undefined>();
 

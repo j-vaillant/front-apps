@@ -7,6 +7,9 @@ import Note from "./components/Note";
 import Counter from "./components/Counter";
 import Context from "./components/ContextDemo";
 import Movies from "./components/Movies";
+import Pendu from "./components/Pendu";
+import Calculator from "./components/Calculator";
+import MemoryColors from "./components/MemoryColors";
 
 const router = createBrowserRouter([
   {
@@ -34,8 +37,20 @@ const router = createBrowserRouter([
         element: <Context />,
       },
       {
-        path: "Movies",
+        path: "movies",
         element: <Movies />,
+      },
+      {
+        path: "pendu",
+        element: <Pendu />,
+      },
+      {
+        path: "calculator",
+        element: <Calculator />,
+      },
+      {
+        path: "memory",
+        element: <MemoryColors />,
       },
     ],
   },

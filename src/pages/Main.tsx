@@ -22,6 +22,15 @@ const Main = () => {
         <li>
           <Link to="/movies">Movies</Link>
         </li>
+        <li>
+          <Link to="/pendu">Pendu</Link>
+        </li>
+        <li>
+          <Link to="/calculator">Calculette</Link>
+        </li>
+        <li>
+          <Link to="/memory">Memory</Link>
+        </li>
       </nav>
       <Outlet />
     </div>
