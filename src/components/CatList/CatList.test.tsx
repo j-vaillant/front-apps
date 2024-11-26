@@ -2,13 +2,13 @@ import { render, waitFor, screen } from "@testing-library/react";
 import mockData from "./cats";
 import CatList from "./";
 
-jest.mock("../utils/api", () => {
+jest.mock("../../utils/api", () => {
   return {
     get: () => Promise.resolve(mockData),
   };
 });
 
-describe.skip("Cat List component", () => {
+describe("Cat List component", () => {
   it("should display title", async () => {
     render(<CatList />);
 

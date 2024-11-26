@@ -15,6 +15,7 @@ const Imc = () => {
     resolver: zodResolver(ImcSchema),
   });
   const [imcScore, setImcScore] = useState<number | null>(null);
+
   const onSubmit = (values: ImcDefinition) => {
     setImcScore((values.weight / Math.pow(values.size, 2)) * 100);
   };
@@ -24,7 +25,7 @@ const Imc = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           className="border-[1px] w-full border-blacks"
-          placeholder="taille cm"
+          placeholder="taille cms"
           type="number"
           {...register("size", {
             setValueAs: (v) => (v === undefined ? 0 : Number(v)),
