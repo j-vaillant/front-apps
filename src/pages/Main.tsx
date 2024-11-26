@@ -31,6 +31,9 @@ const Main = () => {
         <li>
           <Link to="/memory">Memory</Link>
         </li>
+        <li>
+          <Link to="/imc">IMC</Link>
+        </li>
       </nav>
       <Outlet />
     </div>

@@ -10,6 +10,8 @@ import Movies from "./components/Movies";
 import Pendu from "./components/Pendu";
 import Calculator from "./components/Calculator";
 import MemoryColors from "./components/MemoryColors";
+import Get from "./components/Get";
+import Imc from "./components/IMC";
 
 const router = createBrowserRouter([
   {
@@ -52,7 +54,15 @@ const router = createBrowserRouter([
         path: "memory",
         element: <MemoryColors />,
       },
+      {
+        path: "imc",
+        element: <Imc />,
+      },
     ],
+  },
+  {
+    path: "/get/:id",
+    element: <Get />,
   },
 ]);
 
