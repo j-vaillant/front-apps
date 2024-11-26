@@ -28,7 +28,7 @@ const CatList: FC = () => {
   }, []);
 
   return (
-    <div className="cat-list class-random">
+    <div className="cat-list">
       <span>Some Random Cats</span>
       {cats.map((cat) => {
         return (

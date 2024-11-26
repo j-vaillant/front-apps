@@ -9,7 +9,7 @@ const renderComponent = () => {
 describe("Counter component", () => {
   it("should render correctly", () => {
     const { container } = renderComponent();
- 
+
     expect(container).toMatchSnapshot();
   });
 
@@ -31,12 +31,12 @@ describe("Counter component", () => {
     expect(screen.getByText("1")).toBeVisible();
   });
 
-  it("should decrement value on - button click", async () => {
+  it("should decrement value on - button click", () => {
     renderComponent();
 
     const button = screen.getByRole("button", { name: "-" });
 
-    await userEvent.click(button);
+    userEvent.click(button);
 
     expect(screen.getByText("-1")).toBeVisible();
   });

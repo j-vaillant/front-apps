@@ -12,6 +12,9 @@ import Calculator from "./components/Calculator";
 import MemoryColors from "./components/MemoryColors";
 import Get from "./components/Get";
 import Imc from "./components/IMC";
+import Focus from "./Focus";
+import Storage from "./Storage";
+import Todo from "./Todo";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +66,18 @@ const router = createBrowserRouter([
   {
     path: "/get/:id",
     element: <Get />,
+  },
+  {
+    path: "/focus",
+    element: <Focus />,
+  },
+  {
+    path: "/storage",
+    element: <Storage />,
+  },
+  {
+    path: "/todo",
+    element: <Todo />,
   },
 ]);
 
