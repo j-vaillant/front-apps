@@ -71,10 +71,13 @@ const Note = () => {
   };
 
   return (
-    <div className="flex flex-col">
-      <div>
+    <div className="flex flex-col w-[480px]">
+      <div className="flex flex-col items-end">
         <span>Charger une note</span>
-        <select onChange={handleLoad}>
+        <select
+          className="border-black ml-2 mb-2 border-[1px]"
+          onChange={handleLoad}
+        >
           <option value="">Nouvelle note</option>
           {localNotes.map((el, i) => {
             return (
@@ -88,14 +91,24 @@ const Note = () => {
       <textarea
         value={text}
         onChange={(e) => handleChange(e.target.value)}
-        className="border border-black"
+        className="border p-2 border-black"
       />
       {value == null ? (
         <button onClick={handleSave}>Save</button>
       ) : (
         <>
-          <button onClick={() => handleModify()}>Modifier</button>
-          <button onClick={() => handleDelete()}>Supprimer</button>
+          <button
+            className="border-black mt-2 rounded-md border-[1px]"
+            onClick={() => handleModify()}
+          >
+            Modifier
+          </button>
+          <button
+            className="border-red-500 mt-2 rounded-md border-[1px]"
+            onClick={() => handleDelete()}
+          >
+            Supprimer
+          </button>
         </>
       )}
     </div>
