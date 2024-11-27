@@ -22,10 +22,14 @@ type Action = {
   };
 };
 
+const DONE = "DONE";
+const ADD = "ADD";
+const DELETE = "DELETE";
+
 const reducer = (state: State, action: Action) => {
   const idx = action.payload.idx ?? 0;
 
-  if (action.type === "DONE") {
+  if (action.type === DONE) {
     return {
       ...state,
       todos: state.todos.map((t, i) => {
@@ -37,7 +41,7 @@ const reducer = (state: State, action: Action) => {
     };
   }
 
-  if (action.type === "ADD") {
+  if (action.type === ADD) {
     return {
       ...state,
       todos: [
@@ -50,7 +54,7 @@ const reducer = (state: State, action: Action) => {
     };
   }
 
-  if (action.type === "DELETE") {
+  if (action.type === DELETE) {
     return {
       ...state,
       todos: [...state.todos.slice(0, idx), ...state.todos.slice(idx + 1)],
@@ -66,7 +70,7 @@ const Todo = () => {
   const handleAdd = () => {
     const newTodo = window.prompt("Todo ?") ?? "";
 
-    dispatch({ type: "ADD", payload: { text: newTodo } });
+    dispatch({ type: ADD, payload: { text: newTodo } });
   };
 
   return (
@@ -80,15 +84,13 @@ const Todo = () => {
                   { "line-through": t.done },
                   "p-2 border-[1px] cursor-pointer basis-[80%] border-black mt-2 inline-block"
                 )}
-                onClick={() => dispatch({ type: "DONE", payload: { idx: i } })}
+                onClick={() => dispatch({ type: DONE, payload: { idx: i } })}
                 key={i}
               >
                 {t.text}
               </li>
               <span
-                onClick={() =>
-                  dispatch({ type: "DELETE", payload: { idx: i } })
-                }
+                onClick={() => dispatch({ type: DELETE, payload: { idx: i } })}
                 className="text-red-500 cursor-pointer inline-block ml-2"
               >
                 Supprimer

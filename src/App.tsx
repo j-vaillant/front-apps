@@ -15,6 +15,9 @@ import Imc from "./components/IMC";
 import Focus from "./Focus";
 import Storage from "./Storage";
 import Todo from "./Todo";
+import InfiniteLoader from "./InfiniteLoader";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Counter2 from "./components/Counter/CounterZustand";
 
 const router = createBrowserRouter([
   {
@@ -79,10 +82,26 @@ const router = createBrowserRouter([
     path: "/todo",
     element: <Todo />,
   },
+  {
+    path: "/infinite",
+    element: <InfiniteLoader />,
+  },
+  {
+    path: "/counter2",
+    element: <Counter2 />,
+  },
 ]);
 
+const queryClient = new QueryClient();
+
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </>
+  );
 }
 
 export default App;
