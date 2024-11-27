@@ -26,14 +26,12 @@ export default function InfiniteLoader() {
     hasNextPage,
     isFetchingNextPage,
     isError,
-    isLoading,
+    isLoading, 
   } = useInfiniteQuery({
     initialPageParam: 1,
     queryKey: ["posts"],
     queryFn: ({ pageParam: page }) => fetchData(page),
     getNextPageParam: (lastPage, pages) => {
-      //lastpage = tableau
-      // pages = tableau de tableaux
       return lastPage.length === 100 ? pages.length + 1 : undefined;
     },
   });

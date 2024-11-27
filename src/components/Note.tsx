@@ -4,7 +4,7 @@ import useLocalNotes from "../hooks/useLocalNote";
 const Note = () => {
   const savedNotes = useLocalNotes();
   const [localNotes, setLocalNotes] = useState<string[]>(savedNotes);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState<null | number>(null);
   const [text, setText] = useState("");
 
   useEffect(() => {
@@ -29,17 +29,39 @@ const Note = () => {
     setText("");
   };
 
+  const handleDelete = () => {
+    setLocalNotes((prev) =>
+      prev.filter((_n, i) => {
+        return i !== value;
+      })
+    );
+    setText("");
+    setValue(0);
+  };
+
+  const handleModify = () => {
+    setLocalNotes((prev) =>
+      prev.map((n, i) => {
+        if (i === value) {
+          return text;
+        }
+        return n;
+      })
+    );
+  };
+
   const handleLoad: ChangeEventHandler<HTMLSelectElement> = useCallback(
     (e) => {
-      const value = e.target.value;
+      const index = parseInt(e.target.value, 10);
 
-      setValue(value);
+      setValue(index);
 
-      if (value === "") {
+      if (Number.isNaN(index)) {
+        setValue(null);
         return setText("");
       }
 
-      setText(localNotes[parseInt(value, 10)]);
+      setText(localNotes[index]);
     },
     [localNotes]
   );
@@ -56,7 +78,7 @@ const Note = () => {
           <option value="">Nouvelle note</option>
           {localNotes.map((el, i) => {
             return (
-              <option value={i} key={`k-${i}`}>
+              <option selected={value === i} value={i} key={`k-${i}`}>
                 {el.substring(0, 10)}
               </option>
             );
@@ -68,7 +90,14 @@ const Note = () => {
         onChange={(e) => handleChange(e.target.value)}
         className="border border-black"
       />
-      {value === "" && <button onClick={handleSave}>Save</button>}
+      {value == null ? (
+        <button onClick={handleSave}>Save</button>
+      ) : (
+        <>
+          <button onClick={() => handleModify()}>Modifier</button>
+          <button onClick={() => handleDelete()}>Supprimer</button>
+        </>
+      )}
     </div>
   );
 };

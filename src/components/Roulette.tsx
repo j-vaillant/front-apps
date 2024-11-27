@@ -22,7 +22,7 @@ const students = [
   "Matteo",
   "Mohamad",
   "Mohamed",
-  "MUBASHAR",
+  "Mubashar",
   "Timothée",
   "Uday",
 ];
