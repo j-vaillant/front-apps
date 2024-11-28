@@ -42,7 +42,7 @@ const Calculator = () => {
   };
 
   return (
-    <div className="flex w-[300px] flex-col">
+    <div className="flex w-[300px] flex-col border border-black p-1 rounded-sm shadow-md">
       <div className="flex items-center gap-2 mb-1">
         <CalculatorIcon />
         <Input
