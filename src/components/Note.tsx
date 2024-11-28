@@ -21,6 +21,7 @@ const Note = () => {
     const data = {
       notes: localNotes,
     };
+
     localStorage.setItem("notes", JSON.stringify(data));
   }, [localNotes]);
 
