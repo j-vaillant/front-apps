@@ -18,6 +18,7 @@ import Todo from "./Todo";
 import InfiniteLoader from "./InfiniteLoader";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Counter2 from "./components/Counter/CounterZustand";
+import MemoryCards from "./components/MemoryCards";
 
 const router = createBrowserRouter([
   {
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
   {
     path: "/counter2",
     element: <Counter2 />,
+  },
+  {
+    path: "/memoryCards",
+    element: <MemoryCards />,
   },
 ]);
 
