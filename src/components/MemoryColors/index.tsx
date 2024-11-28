@@ -22,12 +22,10 @@ const MemoryColors = () => {
       return;
     }
 
-    if (
-      userValue === computerValue &&
-      userValue.length === computerValue.length
-    ) {
+    if (userValue === computerValue) {
       return setRound((prev) => prev + 1);
     }
+
     if (!computerValue.startsWith(userValue)) {
       return setStatus("ended");
     }
@@ -37,7 +35,6 @@ const MemoryColors = () => {
     if (activeRed) {
       window.setTimeout(() => {
         setActiveRed(false);
-        console.log("red off");
       }, 1000);
     }
   }, [activeRed]);
@@ -85,12 +82,12 @@ const MemoryColors = () => {
     const interVal = window.setInterval(() => {
       if (count === computerValue.length) {
         window.clearInterval(interVal);
+
         return setStatus("user");
       }
       const currentColor = computerValue.charAt(count);
 
       if (currentColor === "R") {
-        console.log("red on");
         setActiveRed(true);
       }
       if (currentColor === "B") {
